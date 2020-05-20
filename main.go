@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/emirpasic/gods/trees/btree"
+	"github.com/fivetentaylor/goinbase/market"
 	"github.com/gorilla/mux"
 	"html"
 	"log"
@@ -15,14 +15,7 @@ func ProductsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	tree := btree.NewWithStringComparator(16)
-	tree.Put("hello", "world")
-	tree.Put("goodbye", "friends")
-	tree.Put("yes", "no")
-	tree.Put("bye", "hello")
-	tree.Put("bye", 12)
-	fmt.Println(tree.Keys())
-	fmt.Println(tree.Values())
+	market.HelloWorld()
 
 	r := mux.NewRouter()
 	r.HandleFunc("/products", ProductsHandler)
