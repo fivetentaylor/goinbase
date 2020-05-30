@@ -1,13 +1,9 @@
-package market
+package goinbase
 
 import (
 	"fmt"
 	"github.com/emirpasic/gods/trees/btree"
 )
-
-type Market struct {
-	accounts []string
-}
 
 func NewMarket() {
 }
