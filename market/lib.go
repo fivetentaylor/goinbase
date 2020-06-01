@@ -1,8 +1,10 @@
 package goinbase
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/emirpasic/gods/trees/btree"
+	"os"
 )
 
 func NewMarket() {
@@ -16,9 +18,12 @@ func HelloWorld() {
 	tree.Put("bye", "hello")
 	tree.Put("bye", 12)
 
-	json, err := tree.ToJSON()
+	json_str, err := tree.ToJSON()
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(string(json))
+	fmt.Println(string(json_str))
+
+	json_str, err = json.Marshal(Order{})
+	os.Stdout.Write(json_str)
 }
