@@ -15,7 +15,7 @@ func ProductsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	goinbase.HelloWorld()
+	market.HelloWorld()
 
 	r := mux.NewRouter()
 	r.HandleFunc("/products", ProductsHandler)

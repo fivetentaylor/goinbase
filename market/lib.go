@@ -1,4 +1,4 @@
-package goinbase
+package market
 
 import (
 	"encoding/json"
@@ -7,7 +7,8 @@ import (
 	"os"
 )
 
-func NewMarket() {
+func NewMarket() Market {
+	return Market{}
 }
 
 func HelloWorld() {
@@ -24,6 +25,9 @@ func HelloWorld() {
 	}
 	fmt.Println(string(json_str))
 
-	json_str, err = json.Marshal(Order{})
+	json_str, err = json.Marshal(Order{ClientOid: "123"})
 	os.Stdout.Write(json_str)
+	fmt.Println()
+
+	fmt.Println(Order{Type: "Ask"}.Type)
 }

@@ -1,6 +1,13 @@
-package goinbase
+package market
 
-// https://docs.pro.coinbase.com/#orders
+// https://docs.pro.coinbase.com
+
+type Market struct {
+	Accounts map[string]Account    `json:"accounts"`
+	Products map[string]Product    `json:"products"`
+	Books    map[string]BookLevel3 `json:"books"`
+}
+
 type Order struct {
 	ClientOid   string `json:"client_oid,omitempty"`
 	Type        string `json:"type,omitempty"`
@@ -23,10 +30,6 @@ type Account struct {
 	Holds     string `json:"holds,omitempty"`
 	Available string `json:"available,omitempty"`
 	Currency  string `json:"currency,omitempty"`
-}
-
-type Market struct {
-	Accounts map[string]Account `json: accounts,omitempty"`
 }
 
 type Product struct {
